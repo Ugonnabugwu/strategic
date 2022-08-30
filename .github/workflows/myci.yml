@@ -1,0 +1,21 @@
+
+name: CI
+on:
+  push:
+    branches: [ "develop" ]
+  pull_request:
+    branches: [ "develop" ]
+  
+jobs:
+  test_script:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run a test of the script
+        run: bash -n testscript.sh
+  # run_script:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - name: Run the script
+  #       run: bash testscript.sh
